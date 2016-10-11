@@ -1,0 +1,19 @@
+{
+	"tpl":"-dirarticles/layout.tpl",
+	"jsontpl":"-dirarticles/?src={config.dir}",
+	"config":{
+		"title":"Акции",
+		"dir":"~actions/"
+	},
+	"child":{
+		"tpl":"-dirarticles/layout.tpl",
+		"tplroot":"PAGE",
+		"jsontpl":"-dirarticles/?src={parent.config.dir}&id={crumb.name}&info",
+		"divs":{
+			"dirart":{
+				"tpltpl":"-dirarticles/?src={parent.parent.config.dir}&id={crumb.name}"
+			}
+		}
+		
+	}
+}
