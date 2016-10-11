@@ -1,5 +1,5 @@
 {
-	"name":"akiyatkin/articles",
+	"name":"akiyatkin/dirarticles",
 	"require":{
 		"infrajs/router":"~1",
 		"dimsemenov/magnific-popup":"~1",
