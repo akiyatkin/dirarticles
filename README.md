@@ -9,3 +9,17 @@
 	}
 }
 ```
+
+## Использование
+
+Подключить слой
+```json
+{
+	"crumb":"actions",
+	"external":"-dirarticles/layer.json",
+	"config":{
+		"title":"Акции",
+		"dir":"~actions/"
+	}
+}
+```
