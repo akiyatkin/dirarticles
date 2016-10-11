@@ -1,0 +1,8 @@
+{
+	"clutch":{
+		"magnific-popup":[
+			"vendor/dimsemenov/",
+			"vendor/infrajs/rubrics/"
+		]
+	}
+}
