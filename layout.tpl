@@ -23,17 +23,20 @@
 </div>
 {item:}
 	<div class="media">
-		<div class="media-left">
-			<a href="/{crumb.name}/{name}">
-				<img class="media-object" src="/-imager/?src={images.0.src}&w=256" alt="{heading}">
-			</a>
-		</div>
+		
 		<div class="media-body">
 			<a href="/{crumb.name}/{name}"><h4 class="media-heading">{heading|title}</h4></a>
 			{preview}
 			<div class="text-right"><i>{~date(:j F Y,date)}</i></div>
 		</div>
+		{images.0.src?:image}
 	</div>
+	{image:}
+		<div class="media-right">
+			<a href="/{crumb.name}/{name}">
+				<img class="media-object" src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">
+			</a>
+		</div>
 {PAGE:}
 	<ol class="breadcrumb">
 		<li><a href="/">Главная</a></li> 
@@ -62,7 +65,6 @@
 		</style>
 		{data.info.gallery::bigimg}
 	</div>
-	<a href="/{parent.crumb}">{parent.config.title}</a>
 	<script>
 		domready(function(){
 			var div = $('.phorts-list');
