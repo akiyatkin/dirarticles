@@ -1,8 +1,10 @@
 <div class="dirarticles">
 	<style scoped>
-		.dirarticles .media {
-			transition: 0.4s;
-			cursor: pointer;
+		.dirarticles .title {
+			font-weight: bold;
+			font-size:120%;
+			display: block;
+			margin-bottom:0.5em;
 		}
 	</style>
 	<ol class="breadcrumb">
@@ -11,32 +13,23 @@
 	</ol>
 	<h1>{config.title}</h1>
 	{data.list::item}
-	<script>
-		domready( function () {
-			$('.dirarticles').find('.media').click( function () {
-				event.preventDefault();
-				event.stopPropagation();
-				Crumb.go($(this).find('a').attr('href'));
-			});
-		});
-	</script>
 </div>
 {item:}
-	<div class="media">
-		
-		<div class="media-body">
-			<a href="/{crumb.name}/{name}"><h4 class="media-heading">{heading|title}</h4></a>
+	<div class="row">
+		<div class="col-sm-8">
+			<a href="/{crumb.name}/{name}" class="title">{heading|title}</a>
 			{preview}
 			<div class="text-right"><i>{~date(:j F Y,date)}</i></div>
 		</div>
-		{images.0.src?:image}
-	</div>
-	{image:}
-		<div class="media-right">
-			<a href="/{crumb.name}/{name}">
-				<img class="media-object" src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">
-			</a>
+		<div class="col-sm-4">
+			{images.0.src?:image}
 		</div>
+	</div>
+	<hr>
+	{image:}
+		<a class="thumbnail" style="margin:0" href="/{crumb.name}/{name}">
+			<img src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">
+		</a>
 {PAGE:}
 	<ol class="breadcrumb">
 		<li><a href="/">Главная</a></li> 
