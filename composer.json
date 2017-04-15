@@ -9,6 +9,7 @@
 		"infrajs/access":"~1",
 		"infrajs/cache":"~1",
 		"infrajs/ans":"~1",
-		"infrajs/config":"~1"
+		"infrajs/config":"~1",
+		"socialshares/buttons":"~2"
 	}
 }

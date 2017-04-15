@@ -44,6 +44,16 @@
 	<p class="text-right">
 		<a href="/{crumb.parent}">{parent.config.title}</a>
 	</p>
+	<div class="socialshares">
+	  <div class="socialshares-twitter"></div>
+	  <div class="socialshares-facebook"></div>
+	  <div class="socialshares-vk"></div>
+	</div>
+	<script>
+		domready(function(){
+			socialshares.mount();
+		});
+	</script>
 {gallery:}
 	<div class="phorts-list">
 		<style scoped>
