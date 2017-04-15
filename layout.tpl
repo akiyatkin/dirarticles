@@ -44,10 +44,15 @@
 	<p class="text-right">
 		<a href="/{crumb.parent}">{parent.config.title}</a>
 	</p>
-	<div class="socialshares">
-	  <div class="socialshares-twitter"></div>
-	  <div class="socialshares-facebook"></div>
-	  <div class="socialshares-vk"></div>
+	<div class="space">
+		<hr>
+		Поделиться: <div class="socialshares" data-theme="brand" data-icononly data-size="small">
+		  <div class="socialshares-facebook"></div>
+		  <div class="socialshares-vk"></div>
+		  <div class="socialshares-twitter"></div>
+		  <div class="socialshares-googleplus"></div>
+		  <div class="socialshares-more"></div>
+		</div>
 	</div>
 	<script>
 		domready(function(){
