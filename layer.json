@@ -5,9 +5,11 @@
 		"title":"Акции",
 		"dir":"~actions/"
 	},
+	"seojsontpl":"{config.dir}seo.json",
 	"child":{
 		"tpl":"-dirarticles/layout.tpl",
 		"tplroot":"PAGE",
+		"seojsontpl":"{parent.config.dir}{crumb.name}.json",
 		"jsontpl":"-dirarticles/?src={parent.config.dir}&id={crumb.name}&info",
 		"divs":{
 			"dirart":{
