@@ -8,8 +8,8 @@
 		}
 	</style>
 	<ol class="breadcrumb">
-		<li><a href="/">Главная</a></li> 
-		<li class="active">{config.title}</li>
+		<li class="breadcrumb-item"><a href="/">Главная</a></li> 
+		<li class="breadcrumb-item active">{config.title}</li>
 	</ol>
 	<h1>{config.title}</h1>
 	{data.list::item}
@@ -28,13 +28,13 @@
 	<hr>
 	{image:}
 		<a class="thumbnail" style="margin:0" href="/{crumb.name}/{name}">
-			<img src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">
+			<img class="img-thumbnail" src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">
 		</a>
 {PAGE:}
 	<ol class="breadcrumb">
-		<li><a href="/">Главная</a></li> 
-		<li><a href="/{crumb.parent}">{parent.config.title}</a></li>
-		<li class="active">{data.info.heading|data.info.title}</li>
+		<li class="breadcrumb-item"><a href="/">Главная</a></li> 
+		<li class="breadcrumb-item"><a href="/{crumb.parent}">{parent.config.title}</a></li>
+		<li class="breadcrumb-item active">{data.info.heading|data.info.title}</li>
 	</ol>
 	<div id="dirart"></div>
 	<p class="text-right">
