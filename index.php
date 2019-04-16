@@ -6,11 +6,6 @@ use infrajs\load\Load;
 use infrajs\rubrics\Rubrics;
 use infrajs\access\Access;
 
-if (!is_file('vendor/autoload.php')) {
-	chdir(explode('vendor/', __DIR__)[0]);
-	require_once('vendor/autoload.php');
-	Router::init();
-}
 
 $ans = array();
 

@@ -19,13 +19,14 @@
 		<div class="col-sm-8">
 			<a href="/{crumb.name}/{name}" class="title">{heading|title}</a>
 			{preview}
-			<div class="text-right"><i>{~date(:j F Y,date)}</i></div>
+			{config.isdate?:idate}
 		</div>
 		<div class="col-sm-4">
 			{images.0.src?:image}
 		</div>
 	</div>
 	<hr>
+	{idate:}<div class="text-right"><i>{~date(:j F Y,date)}</i></div>
 	{image:}
 		<a class="thumbnail" style="margin:0" href="/{crumb.name}/{name}">
 			<img class="img-thumbnail" src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">

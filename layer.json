@@ -1,8 +1,10 @@
 {
 	"tpl":"-dirarticles/layout.tpl",
-	"jsontpl":"-dirarticles/?src={config.dir}",
+	"jsontpl":"-dirarticles/?src={config.dir}&order={config.order}",
 	"config":{
+		"order":"descending",
 		"title":"Акции",
+		"isdate":true,
 		"dir":"~actions/"
 	},
 	"seojsontpl":"{config.dir}seo.json",
