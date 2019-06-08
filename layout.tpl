@@ -45,7 +45,7 @@
 	<p class="text-right">
 		<a href="/{crumb.parent}">{parent.config.title}</a>
 	</p>
-	<div class="space">
+	<!--<div class="space">
 		<hr>
 		Поделиться: <div class="socialshares" data-theme="brand" data-icononly data-size="small">
 		  <div class="socialshares-facebook"></div>
@@ -59,7 +59,7 @@
 		domready(function(){
 			socialshares.mount();
 		});
-	</script>
+	</script>-->
 {gallery:}
 	<div class="phorts-list">
 		<style scoped>
