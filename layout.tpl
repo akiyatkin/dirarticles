@@ -18,18 +18,19 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<a href="/{crumb.name}/{name}" class="title">{heading|title}</a>
-			{preview}
+			<div class="d-none d-sm-block">{preview}</div>
 			{config.isdate?:idate}
 		</div>
 		<div class="col-sm-4">
-			{images.0.src?:image}
+			{gallery.0?:image}
+			<div class="d-block d-sm-none">{preview}</div>
 		</div>
 	</div>
 	<hr>
 	{idate:}<div class="text-right"><i>{~date(:j F Y,date)}</i></div>
 	{image:}
-		<a class="thumbnail" style="margin:0" href="/{crumb.name}/{name}">
-			<img class="img-thumbnail" src="/-imager/?src={images.0.src}&w=256&or=-imager/empty.png" alt="{heading}">
+		<a class="thumbnail d-block mb-2" href="/{crumb.name}/{name}">
+			<img class="img-thumbnail" src="/-imager/?src={gallerydir}{gallery.0.file}&w=256&or=-imager/empty.png" alt="{heading}">
 		</a>
 {PAGE:}
 	<ol class="breadcrumb">
@@ -74,13 +75,13 @@
 		</style>
 		{data.info.gallery::bigimg}
 	</div>
-	<script>
-		domready(function(){
-			var div = $('.phorts-list');
-			if (!div.magnificPopup) {
-				console.info('Требуется magnificPopup');
-				return;
-			}
+	<script async type="module">
+		(async () => {
+			let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default
+			await CDN.load('magnific-popup')
+			let div = document.getElementById('{div}')
+			if (!div) return;
+			div = $(div).find('.phorts-list');
 			div.find('a').magnificPopup({
 				type: 'image',
 				gallery:{
@@ -88,7 +89,7 @@
 				}
 			});
 			var hash = location.hash;
-			if(hash){
+			if (hash){
 				hash = hash.replace(/^#/,'');
 				if (hash=='show') {
 					div.find('a:first').click();
@@ -98,6 +99,6 @@
 					$(el).click();
 				}
 			}
-		});
+		})()
 	</script>
 {bigimg:}<a id="img-{name}" href="/{...gallerydir}{file}"><img style="width:20%" src="/-imager/?w=400&h=300&crop=1&top=1&src={...gallerydir}{file}"></a>
