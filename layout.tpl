@@ -60,7 +60,7 @@
 		</style>
 		{data.info.gallery::bigimg}
 	</div>
-	<script async type="module">
+	<script type="module">
 		(async () => {
 			let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default
 			await CDN.load('magnific-popup')
