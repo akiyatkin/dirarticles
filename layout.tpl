@@ -1,5 +1,5 @@
 <div class="dirarticles">
-	<style scoped>
+	<style>
 		.dirarticles .title {
 			font-weight: bold;
 			font-size:120%;
