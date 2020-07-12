@@ -27,6 +27,26 @@ if ($id) {
 		return Ans::ret($ans); 
 	} else {
 		$text = Rubrics::article($src);
+		if (!$src) {
+			header("HTTP/1.0 404 Not Found");
+			return;
+		} else {
+			$text = Rubrics::article($src);
+			
+			$removeh1 = isset($_GET['removeh1']);
+			$headingstodiv = isset($_GET['headingstodiv']);
+
+			if ($removeh1) {
+				$text = preg_replace('/<h1[^>]*?>.*?<\/h1>/si', '', $text);
+				
+			}
+			if ($headingstodiv) {
+				$text = preg_replace('/<(h\d)[^>]*?>(.*?)<\/h\d>/si', '<div class="${1}">${2}</div>', $text);
+			}
+			if (Ans::isReturn()) return $text;
+			echo $text;
+			return;
+		}
 		return Ans::html($text);
 	}
 }
