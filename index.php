@@ -57,7 +57,7 @@ $ans['order'] = $order;
 $list = Access::cache(__FILE__, function ($src, $order, $istext, $removeh1) {
 	$list = array();
 	array_map(function ($file) use (&$list, $src, $istext, $removeh1) {
-		if ($file{0} == '.') return;
+		if ($file[0] == '.') return;
 		$file = Path::toutf($file);
 		if (!Path::theme($src.$file)) return;
 		$ext = Path::getExt($file);
